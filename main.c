@@ -34,10 +34,32 @@ void filestat1() {}
 void filestat2() {}
 
 // 파일 1의 시간 정보를 가져오는 함수 작성
-void filetime1() {}
+void filetime1() {
+   struct stat fileStat;
+    if (stat("text1", &fileStat) == -1) {
+        perror("stat");
+        return;
+    }
+
+    struct tm *modTime = localtime(&fileStat.st_mtime);
+    printf("File: text1\n");
+    printf("Last modification date: %02d/%02d\n", modTime->tm_mon + 1, modTime->tm_mday); // 월/일
+    printf("Last modification time: %02d:%02d\n", modTime->tm_hour, modTime->tm_min);     // 시:분
+}
 
 // 파일 2의 시간 정보를 가져오는 함수 작성
-void filetime2() {}
+void filetime2() {
+   struct stat fileStat;
+    if (stat("text2", &fileStat) == -1) {
+        perror("stat");
+        return;
+    }
+
+    struct tm *modTime = localtime(&fileStat.st_mtime);
+    printf("File: text2\n");
+    printf("Last modification date: %02d/%02d\n", modTime->tm_mon + 1, modTime->tm_mday); // 월/일
+    printf("Last modification time: %02d:%02d\n", modTime->tm_hour, modTime->tm_min);     // 시:분
+}
 
 // 두 개의 파일 크기를 비교하는 함수 작성
 void sizecmp() {}
