@@ -40,7 +40,27 @@ void filetime1() {}
 void filetime2() {}
 
 // 두 개의 파일 크기를 비교하는 함수 작성
-void sizecmp() {}
+void sizecmp() {
+  struct stat stat1, stat2;
+
+    if (stat("text1", &stat1) == -1) {
+        perror("stat text1");
+        return;
+    }
+    if (stat("text2", &stat2) == -1) {
+        perror("stat text2");
+        return;
+    }
+
+
+    if (stat1.st_size > stat2.st_size) {
+        printf("text1 is bigger\n");
+    } else if (stat1.st_size < stat2.st_size) {
+        printf("text2 is bigger\n");
+    } else {
+        printf("sizes are equal\n");
+    }
+}
 
 // 두 개의 파일 블락 수를 비교하는 함수 작성
 void blockcmp() {}
