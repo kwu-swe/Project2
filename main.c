@@ -63,7 +63,26 @@ void sizecmp() {
 }
 
 // 두 개의 파일 블락 수를 비교하는 함수 작성
-void blockcmp() {}
+void blockcmp() {
+  struct stat stat1, stat2;
+
+    if (stat("text1", &stat1) == -1) {
+        perror("stat text1");
+        return;
+    }
+    if (stat("text2", &stat2) == -1) {
+        perror("stat text2");
+        return;
+    }
+
+    if (stat1.st_blocks > stat2.st_blocks) {
+        printf("text1 is bigger\n");
+    } else if (stat1.st_blocks < stat2.st_blocks) {
+        printf("text2 is bigger\n");
+    } else {
+        printf("sizes are equal\n");
+    }
+}
 
 // 두 개의 파일 수정 날짜를 비교하는 함수 작성
 void datecmp() {}
