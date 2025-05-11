@@ -67,6 +67,15 @@ void filestat1()
 		hour1 = time1->tm_hour;
 		min1 = time1->tm_min;
 	}
+
+	// ** 저장된 변수 값 테스트 출력
+	// printf("\n=== text1 저장된 변수 값 ===\n");
+	// printf("size1: %lld\n", size1);
+	// printf("blocks1: %lld\n", blocks1);
+	// printf("month1: %d\n", month1);
+	// printf("day1: %d\n", day1);
+	// printf("hour1: %d\n", hour1);
+	// printf("min1: %d\n", min1);
 }
 
 // Function to get information for file 2
@@ -94,6 +103,15 @@ void filestat2()
 		hour2 = time2->tm_hour;
 		min2 = time2->tm_min;
 	}
+
+	// ** 저장된 변수 값 테스트 출력
+	// printf("\n=== text2 저장된 변수 값 ===\n");
+	// printf("size2: %lld\n", size2);
+	// printf("blocks2: %lld\n", blocks2);
+	// printf("month2: %d\n", month2);
+	// printf("day2: %d\n", day2);
+	// printf("hour2: %d\n", hour2);
+	// printf("min2: %d\n", min2);
 }
 
 // 파일 1의 시간 정보를 가져오는 함수 작성
